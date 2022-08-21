@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<%= link_to "Back to intakes", intakes_path %>
+<table class='table'>
+  <thead>
+      <td>description</td>
+      <td>ean</td>
+      <td>kcal per 100g intake</td>
+    <td></td>
+  </thead>
+  <tbody>
+<%= render @intake %>
+    <td>  <%= link_to "Edit", edit_intake_path(@intake),  class: [:button, :'is-info', :'is-light', :'is-small']%>
+</td>
+    </tr>
+</tbody>
+</table>
+<div>
+  <td><%= button_to "Destroy this intake", @intake, method: :delete,  data: { confirm: "Are you sure?" }, class: [:button, :'is-danger']  %>
+  </div>

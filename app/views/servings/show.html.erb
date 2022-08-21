@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<%= link_to "Back to servings", servings_path %>
+<table class='table'>
+  <thead>
+    <td>Intake</td>
+    <td>calories</td>
+    <td>amount</td>
+    <td></td>
+  </thead>
+  <tbody>
+      <%= render @serving %>
+    <td>  <%= link_to "Edit", edit_serving_path(@serving),  class: [:button, :'is-info', :'is-light', :'is-small']%>
+</td>
+    </tr>
+</tbody>
+</table>
+<div>
+  <td><%= button_to "Destroy this serving", @serving, method: :delete,  data: { confirm: "Are you sure?" }, class: [:button, :'is-danger']  %>
+  </div>

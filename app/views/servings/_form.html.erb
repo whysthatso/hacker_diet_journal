@@ -1,0 +1,32 @@
+<%= form_with(model: serving) do |form| %>
+  <% if serving.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(serving.errors.count, "error") %> prohibited this serving from being saved:</h2>
+
+      <ul>
+        <% serving.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :intake_id, style: "display: block" %>
+    <%= form.collection_select :intake_id, Intake.all.order('description ASC'), :id, :description %>
+  </div>
+
+  <div>
+    <%= form.label :when, style: "display: block" %>
+    <%= form.datetime_field :when %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+<h1 class='title is-1'>Servings</h1>
+<%= link_to "New serving", new_serving_path, class: [ :button, :'is-large', :'is-primary', :'mb-4']%>
+
+<div id="servings">
+  <% @servings_per_day.each do | day, servings | %>
+    <% daily_kcal_sum = servings.map {|serving| serving.kcal }.inject(0){|sum,x| sum + x } %>
+    <h2 class='title is-2'><%= day %></h2>
+    <div class='subtitle is-3'>total calories: <%= daily_kcal_sum %> kcal</div>
+    <table class='table'>
+      <thead>
+        <td>Intake</td>
+        <td>calories</td>
+        <td>amount</td>
+        <td></td>
+      </thead>
+      <tbody><% servings.each do | serving | %>
+          <%= render serving %>
+          <td><%= link_to "Details", serving, class: [:button, :'is-info', :'is-light', :'is-small'] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+<h1 class='title is-1'>Intakes</h1>
+<%= link_to "New", new_intake_path, class: [ :button, :'is-large', :'is-primary', :'mb-4']%>
+
+  <table class='table'>
+    <thead>
+      <td>description</td>
+      <td>ean</td>
+      <td>kcal per 100g intake</td>
+        <td></td>
+    </thead>
+    <tbody><% @intakes.each do | intake | %>
+        <%= render intake %>
+          <td><%= link_to "Details", intake, class: [:button, :'is-info', :'is-light', :'is-small'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
