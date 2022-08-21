@@ -3,7 +3,7 @@ class ServingsController < ApplicationController
 
   # GET /servings or /servings.json
   def index
-    @servings = Serving.all
+    @servings = Serving.includes(:intake).all
     @servings_per_day = @servings.order(when: :desc).group_by { |serving| serving.when.strftime("%Y-%m-%d") }
   end
 
