@@ -1,0 +1,9 @@
+<%= flash.inspect %>
+<% flash.each do |name, msg| -%>
+  <% if msg.is_a?(String) -%>
+    <%= tag.div class: ["notification", "is-#{name}"] do %>
+      <%= tag.button class: "delete" %>
+        <%= concat msg %>
+    <% end -%>
+  <% end -%>
+<% end -%>

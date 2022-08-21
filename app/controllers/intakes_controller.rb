@@ -25,7 +25,7 @@ class IntakesController < ApplicationController
 
     respond_to do |format|
       if @intake.save
-        format.html { redirect_to intake_url(@intake), notice: "Intake was successfully created." }
+        format.html { redirect_to intake_url(@intake), success: "Intake was successfully created." }
         format.json { render :show, status: :created, location: @intake }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class IntakesController < ApplicationController
   def update
     respond_to do |format|
       if @intake.update(intake_params)
-        format.html { redirect_to intake_url(@intake), notice: "Intake was successfully updated." }
+        format.html { redirect_to intake_url(@intake), success: "Intake was successfully updated." }
         format.json { render :show, status: :ok, location: @intake }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class IntakesController < ApplicationController
     @intake.destroy
 
     respond_to do |format|
-      format.html { redirect_to intakes_url, notice: "Intake was successfully destroyed." }
+      format.html { redirect_to intakes_url, success: "Intake was successfully destroyed." }
       format.json { head :no_content }
     end
   end

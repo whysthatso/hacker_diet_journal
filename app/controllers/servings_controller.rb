@@ -28,7 +28,7 @@ class ServingsController < ApplicationController
 
     respond_to do |format|
       if @serving.save
-        format.html { redirect_to servings_url, notice: "Serving was successfully created." }
+        format.html { redirect_to servings_url, success: "Serving was successfully created." }
         format.json { render :show, status: :created, location: @serving }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class ServingsController < ApplicationController
   def update
     respond_to do |format|
       if @serving.update(serving_params)
-        format.html { redirect_to serving_url(@serving), notice: "Serving was successfully updated." }
+        format.html { redirect_to serving_url(@serving), success: "Serving was successfully updated." }
         format.json { render :show, status: :ok, location: @serving }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class ServingsController < ApplicationController
     @serving.destroy
 
     respond_to do |format|
-      format.html { redirect_to servings_url, notice: "Serving was successfully destroyed." }
+      format.html { redirect_to servings_url, success: "Serving was successfully destroyed." }
       format.json { head :no_content }
     end
   end
