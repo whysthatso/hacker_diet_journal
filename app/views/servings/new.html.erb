@@ -5,41 +5,16 @@
     <%= render "form", serving: @serving %>
   </div>
   <div class="column">
-    <h3 class="is-3">Common servings</h3>
+    <h3 class="is-3">Common portion size</h3>
+
     <table class="table">
       <tbody>
+      <% @common_intakes.each do | intake | -%>
         <tr>
-          <td>Pannkoogid</td>
-          <td>16g</td>
+          <td><%= intake.description %></td>
+          <td><%= intake.common_portion %></td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
+      <% end -%>
       </tbody>
     </table>
   </div>

@@ -14,6 +14,7 @@ class ServingsController < ApplicationController
   # GET /servings/new
   def new
     @serving = Serving.new
+    @common_intakes = Intake.with_common_portion
   end
 
   # GET /servings/1/edit
