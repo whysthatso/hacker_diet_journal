@@ -4,6 +4,8 @@
   "dependencies": {
     "bulma": "^0.9.4",
     "bulma-calendar": "^6.1.18",
+    "chart.js": "^3.9.1",
+    "chartkick": "^4.2.0",
     "esbuild": "^0.15.5",
     "sass": "^1.54.5"
   },
