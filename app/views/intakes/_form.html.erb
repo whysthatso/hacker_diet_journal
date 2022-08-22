@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :common_portion, style: "display: block" %>
+    <%= form.number_field :common_portion %>
+  </div>
+
+  <div>
     <%= form.submit class: [ :button, :'is-primary' ] %>
   </div>
 <% end %>

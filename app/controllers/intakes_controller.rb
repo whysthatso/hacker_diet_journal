@@ -66,6 +66,6 @@ class IntakesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def intake_params
-    params.require(:intake).permit(:description, :ean, :kcal_per_100)
+    params.require(:intake).permit(:description, :ean, :kcal_per_100, :common_portion)
   end
 end
