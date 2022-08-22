@@ -1,0 +1,16 @@
+<h1 class='title is-1'>measurements</h1>
+<%= link_to "New", new_measurement_path, class: [ :button, :'is-large', :'is-primary', :'mb-4']%>
+
+  <table class='table'>
+    <thead>
+      <td>when</td>
+      <td>weight</td>
+      <td></td>
+    </thead>
+    <tbody><% @measurements.each do | measurement | %>
+        <%= render measurement %>
+          <td><%= link_to "Details", measurement, class: [:button, :'is-info', :'is-light', :'is-small'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

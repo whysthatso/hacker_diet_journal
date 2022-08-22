@@ -1,0 +1,17 @@
+<%= link_to "Back to measurements", measurements_path %>
+<table class='table'>
+  <thead>
+      <td>when</td>
+      <td>weight</td>
+    <td></td>
+  </thead>
+  <tbody>
+<%= render @measurement %>
+    <td>  <%= link_to "Edit", edit_measurement_path(@measurement),  class: [:button, :'is-info', :'is-light', :'is-small']%>
+</td>
+    </tr>
+</tbody>
+</table>
+<div>
+  <td><%= button_to "Destroy this measurement", @measurement, method: :delete,  data: { confirm: "Are you sure?" }, class: [:button, :'is-danger']  %>
+</div>
