@@ -1,9 +1,12 @@
-<h1 class='is-1'>New intake</h1>
+<h1 class='title is-1'>New intake</h1>
+<div class="subtitle"><%= link_to "Back to intakes", intakes_path %></div>
 
-<%= render "form", intake: @intake %>
+<div class="columns">
+  <div class="column">
+    <%= render "form", intake: @intake %>
+  </div>
+  <div class="column">
+    <h3 class="is-3">Tipps</h3>
 
-<br>
-
-<div>
-  <%= link_to "Back to intakes", intakes_path %>
+  </div>
 </div>

@@ -1,9 +1,46 @@
-<h1 class='is-1'>New serving</h1>
-
-<%= render "form", serving: @serving %>
-
-<br>
-
-<div>
-  <%= link_to "Back to servings", servings_path %>
+<h1 class='title is-1'>New serving</h1>
+<div class="subtitle"><%= link_to "Back to servings", servings_path %></div>
+<div class="columns">
+  <div class="column">
+    <%= render "form", serving: @serving %>
+  </div>
+  <div class="column">
+    <h3 class="is-3">Common servings</h3>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Pannkoogid</td>
+          <td>16g</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
