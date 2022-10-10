@@ -1,5 +1,5 @@
 <h1 class='title is-1'>measurements</h1>
-<%= line_chart weight_over_time %>
+<%= line_chart weight_over_time, min: 70, max: 110 %>
 <%= link_to "New", new_measurement_path, class: [ :button, :'is-large', :'is-primary', :'mb-4']%>
 
   <table class='table'>
