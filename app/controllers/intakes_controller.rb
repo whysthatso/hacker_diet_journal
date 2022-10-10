@@ -38,6 +38,8 @@ class IntakesController < ApplicationController
   def update
     respond_to do |format|
       if @intake.update(intake_params)
+        # TODO is that really the best way, or should update_all be called on servings? currently there is one db transaction per record
+        @intake.servings.map{ |serving| serving.update( kcal: @intake.kcal_per_100 * serving.amount / 100) }
         format.html { redirect_to intake_url(@intake), success: "Intake was successfully updated." }
         format.json { render :show, status: :ok, location: @intake }
       else
