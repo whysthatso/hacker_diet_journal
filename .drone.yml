@@ -1,0 +1,37 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+
+- name: build new docker image from tagged commit via kaniko
+  image: banzaicloud/drone-kaniko
+  settings:
+    registry:
+    username: andreas
+    password:
+      from_secret: registry_pass
+    repo: whysthatso/hacker_diet_journal
+    tags: ${DRONE_TAG}
+    cache: true
+
+- name: send notification to telegram
+  image: appleboy/drone-telegram
+  settings:
+    token:
+      from_secret: telegram_token
+    to: 393273328
+    message: >
+      {{#success build.status}}
+        SUCCESS build {{build.link}} triggerd by {{commit.link}} from {{commit.author}}
+      {{else}}
+        FAIL build {{build.link}} triggerd by {{commit.link}} from {{commit.author}}
+      {{/success}}
+  when:
+    status:
+      - success
+      - failure
+
+trigger:
+  event:
+  - tag
