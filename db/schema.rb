@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_110217) do
 
   create_table "servings", force: :cascade do |t|
     t.integer "intake_id", null: false
-    t.datetime "when"
+    t.datetime "consumed_at"
     t.integer "kcal"
     t.integer "amount"
     t.datetime "created_at", null: false

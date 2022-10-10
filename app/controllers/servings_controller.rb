@@ -4,7 +4,7 @@ class ServingsController < ApplicationController
   # GET /servings or /servings.json
   def index
     @servings = Serving.includes(:intake).all
-    @servings_per_day = @servings.order(when: :desc).group_by { |serving| serving.when.strftime("%Y-%m-%d") }
+    @servings_per_day = @servings.order(consumed_at: :desc).group_by { |serving| serving.consumed_at.strftime("%Y-%m-%d") }
   end
 
   # GET /servings/1 or /servings/1.json
@@ -70,6 +70,6 @@ class ServingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def serving_params
-    params.require(:serving).permit(:intake_id, :when, :kcal, :amount)
+    params.require(:serving).permit(:intake_id, :consumed_at, :kcal, :amount)
   end
 end
