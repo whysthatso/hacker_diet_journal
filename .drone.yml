@@ -7,7 +7,7 @@ steps:
 - name: build new docker image from tagged commit via kaniko
   image: banzaicloud/drone-kaniko
   settings:
-    registry:
+    registry: registry.whyservices.net
     username: andreas
     password:
       from_secret: registry_pass
