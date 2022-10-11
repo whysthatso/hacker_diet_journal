@@ -13,7 +13,7 @@ steps:
       from_secret: registry_pass
     repo: whysthatso/hacker_diet_journal
     tags: ${DRONE_TAG}
-    cache: true
+    expand-repo: true
 
 - name: send notification to telegram
   image: appleboy/drone-telegram
