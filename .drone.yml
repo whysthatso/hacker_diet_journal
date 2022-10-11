@@ -11,7 +11,7 @@ steps:
     username: whysthatso
     password:
       from_secret: registry_pass
-    repo: whysthatso/hacker_diet_journal
+    repo: gitea.whyservices.net/whysthatso/hacker_diet_journal
     tags: ${DRONE_TAG}
     expand-repo: true
 
