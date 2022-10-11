@@ -5,10 +5,10 @@ name: default
 steps:
 
 - name: build new docker image from tagged commit via kaniko
-  image: banzaicloud/drone-kaniko
+  image: plugins/kaniko:1.6.6
   settings:
-    registry: registry.whyservices.net
-    username: andreas
+    registry: gitea.whyservices.net
+    username: whysthatso
     password:
       from_secret: registry_pass
     repo: whysthatso/hacker_diet_journal
