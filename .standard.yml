@@ -1,0 +1,5 @@
+ruby_version: 3.3
+ignore:
+  - "Gemfile.lock"
+  - "tmp/**/*"
+  - "test/fixture/**/*"
